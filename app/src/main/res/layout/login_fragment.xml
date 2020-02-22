@@ -23,7 +23,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@color/colorPrimaryLight"
-        android:margin="500dp"
         android:text="LOGIN" />
 </FrameLayout>
 </layout>

@@ -2,6 +2,8 @@ package org.ieselcaminas.cristina.proyectoclase.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import androidx.navigation.findNavController
 import org.ieselcaminas.cristina.proyectoclase.R
 
 class MainActivity : AppCompatActivity() {
@@ -9,5 +11,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val navController = this.findNavController(R.id.myNavHostFragment)
     }
+
 }
