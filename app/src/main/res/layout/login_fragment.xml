@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="bindingViewmodel"
+            type="org.ieselcaminas.cristina.proyectoclase.ui.login.LoginFragment" />
+    </data>
+<FrameLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.login.LoginFragment">
+    android:layout_height="match_parent" >
 
     <TextView
         android:layout_width="match_parent"
@@ -11,3 +16,4 @@
         android:text="Hello" />
 
 </FrameLayout>
+</layout>
