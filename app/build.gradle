@@ -42,4 +42,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.0'
+    //--NECESARIOS PARA FIRABASE
+    implementation 'com.google.firebase:firebase-auth:19.1.0'
+    implementation 'com.firebaseui:firebase-ui-auth:4.3.1'
+    implementation 'com.google.firebase:firebase-database:16.0.4'
 }
