@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
             name="bindingViewmodel"
             type="org.ieselcaminas.cristina.proyectoclase.ui.login.LoginFragment" />
     </data>
-<FrameLayout
+
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccentLight">
+        tools:context=".ui.login.LoginFragment"
+        android:orientation="vertical"
+        android:background="@color/colorPrimaryLight">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/fondo_login" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            app:srcCompat="@drawable/logo" />
 
-    <Button
-        android:id="@+id/loginbutton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="@color/colorPrimaryLight"
-        android:text="LOGIN" />
-</FrameLayout>
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="WELCOME TO THERAPPY"
+            android:layout_marginTop="20dp"
+            android:textColor="#000"
+            android:textSize="30sp"
+            app:fontFamily="monospace" />
+
+        <Button
+            android:id="@+id/loginbutton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:text="LOGIN" />
+    </LinearLayout>
 </layout>

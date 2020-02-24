@@ -1,21 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/navigation"
-    app:startDestination="@id/mainFragment">
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="org.ieselcaminas.cristina.proyectoclase.ui.login.MainFragment"
-        android:label="MainFragment" >
-        <action
-            android:id="@+id/action_mainFragment_to_menuFragment"
-            app:destination="@id/menuFragment" />
-    </fragment>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
     <fragment
         android:id="@+id/menuFragment"
         android:name="org.ieselcaminas.cristina.proyectoclase.ui.menu.MenuFragment"
-        android:label="MenuFragment" />
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment_to_citaFragment"
+            app:destination="@id/citaFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_respiracionesFragment"
+            app:destination="@id/respiracionesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_medicacionFragment"
+            app:destination="@id/medicacionFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_notasFragment"
+            app:destination="@id/notasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/citaFragment"
+        android:name="org.ieselcaminas.cristina.proyectoclase.ui.cita.CitaFragment"
+        android:label="cita_fragment"
+        tools:layout="@layout/cita_fragment" />
+    <fragment
+        android:id="@+id/respiracionesFragment"
+        android:name="org.ieselcaminas.cristina.proyectoclase.ui.respiraciones.RespiracionesFragment"
+        android:label="RespiracionesFragment" />
+    <fragment
+        android:id="@+id/medicacionFragment"
+        android:name="org.ieselcaminas.cristina.proyectoclase.ui.medicacion.MedicacionFragment"
+        android:label="MedicacionFragment" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="org.ieselcaminas.cristina.proyectoclase.ui.login.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notasFragment"
+        android:name="org.ieselcaminas.cristina.proyectoclase.ui.notas.NotasFragment"
+        android:label="NotasFragment" />
 </navigation>

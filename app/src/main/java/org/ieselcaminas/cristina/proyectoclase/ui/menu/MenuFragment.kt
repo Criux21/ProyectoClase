@@ -6,6 +6,11 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.NavigationUI
+import com.firebase.ui.auth.AuthUI
+import com.google.firebase.auth.FirebaseUser
 
 import org.ieselcaminas.cristina.proyectoclase.R
 import org.ieselcaminas.cristina.proyectoclase.databinding.MenuFragmentBinding
@@ -17,10 +22,7 @@ class MenuFragment : Fragment() {
         fun newInstance() = MenuFragment()
     }
 
-    private lateinit var binding: MenuFragment
-    private val viewModel by lazy{
-        ViewModelProvider(this).get(LoginViewModel::class.java)
-    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,8 +31,19 @@ class MenuFragment : Fragment() {
         val binding = DataBindingUtil.inflate<MenuFragmentBinding>(
             inflater, R.layout.menu_fragment, container, false
         )
-
-
+        val navController = this.findNavController()
+        binding.button1.setOnClickListener{
+            this.findNavController().navigate(R.id.action_menuFragment_to_notasFragment)
+        }
+        binding.button2.setOnClickListener{
+            this.findNavController().navigate(R.id.action_menuFragment_to_citaFragment)
+        }
+        binding.button3.setOnClickListener{
+            this.findNavController().navigate(R.id.action_menuFragment_to_medicacionFragment)
+        }
+        binding.button4.setOnClickListener{
+            this.findNavController().navigate(R.id.action_menuFragment_to_respiracionesFragment)
+        }
 
         return binding.root
 
@@ -46,4 +59,21 @@ class MenuFragment : Fragment() {
         super.onCreate(savedInstanceState)
         setHasOptionsMenu(true)
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        var logout = false
+        when(item.itemId){
+           R.id.action_menu_logout ->  logout = true
+           else -> return NavigationUI.onNavDestinationSelected(item,
+               view!!.findNavController())
+        }
+        if(logout){
+            AuthUI.getInstance().signOut(requireContext())
+            this.findNavController().navigate(R.id.action_menuFragment_to_loginFragment)
+        }
+
+        return true
+
+    }
+
 }
