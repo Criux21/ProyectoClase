@@ -15,9 +15,6 @@
             android:id="@+id/action_menuFragment_to_respiracionesFragment"
             app:destination="@id/respiracionesFragment" />
         <action
-            android:id="@+id/action_menuFragment_to_medicacionFragment"
-            app:destination="@id/medicacionFragment" />
-        <action
             android:id="@+id/action_menuFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
@@ -33,10 +30,6 @@
         android:id="@+id/respiracionesFragment"
         android:name="org.ieselcaminas.cristina.proyectoclase.ui.respiraciones.RespiracionesFragment"
         android:label="RespiracionesFragment" />
-    <fragment
-        android:id="@+id/medicacionFragment"
-        android:name="org.ieselcaminas.cristina.proyectoclase.ui.medicacion.MedicacionFragment"
-        android:label="MedicacionFragment" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="org.ieselcaminas.cristina.proyectoclase.ui.login.LoginFragment"

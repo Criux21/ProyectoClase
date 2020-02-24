@@ -1,6 +1,6 @@
 package com.example.keepnotes
 
-class NotasItem(titulo: String, contenido: String) {
+class NotasItem( titulo: String, contenido: String) {
     var titulo: String
     var contenido: String
 

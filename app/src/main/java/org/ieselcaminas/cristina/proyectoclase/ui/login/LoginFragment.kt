@@ -85,7 +85,7 @@ class LoginFragment : Fragment() {
                     binding.loginbutton2.setOnClickListener() {
                         AuthUI.getInstance().signOut(requireContext())
                     }
-                    this.findNavController().navigate(R.id.action_loginFragment_to_menuFragment)
+                    this.findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToMenuFragment())
                 }
                 else -> {
                     //binding.loginbutton2.text = "login"

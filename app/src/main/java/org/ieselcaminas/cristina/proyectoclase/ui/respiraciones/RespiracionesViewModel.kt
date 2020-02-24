@@ -58,7 +58,6 @@ class RespiracionesViewModel : ViewModel() {
             }
         }
 
-
     }
 
     fun startTimers(){

@@ -9,24 +9,28 @@ import org.ieselcaminas.cristina.proyectoclase.R
 
 class NotasAdapter(var items: ArrayList<NotasItem>) : RecyclerView.Adapter<NotasAdapter.TarjViewHolder>() {
 
-    lateinit var onClick: (View) -> Unit //hay que hacer el metodo on click manualmente **
+    lateinit var onClick: (View) -> Unit
 
-    init { //items es nuestra array list de cartas
+    init {
          this.items = items
     }
 
     class TarjViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-        var texto: TextView
+        var titulo: TextView
+        var contenido: TextView
+
 
          init {
-             texto = itemView.findViewById(R.id.textView)
+             titulo = itemView.findViewById(R.id.titulo)
+             contenido = itemView.findViewById(R.id.contenido)
          }
 
          fun bindTarjeta(t: NotasItem, onClick: (View) -> Unit) = with(itemView) {
-             texto.setText(t.titulo)
+             titulo.setText(t.titulo)
+             contenido.setText(t.contenido)
 
-             setOnClickListener{ onClick(itemView) }//junto con el onlick view de arriba, para lo del manual onclick*
+             setOnClickListener{ onClick(itemView) }
          }
 
 
@@ -39,26 +43,9 @@ class NotasAdapter(var items: ArrayList<NotasItem>) : RecyclerView.Adapter<Notas
 
     override fun onBindViewHolder(viewHolder: TarjViewHolder, pos: Int) {
          val item = items.get(pos)
-         viewHolder.bindTarjeta(item, onClick) //onlClick para el manual*
-
-        /*
-         viewHolder.toolbar.setOnMenuItemClickListener() {
-            when(it.getItemId()){
-                (R.id.action_copiar) -> {items.add(viewHolder.adapterPosition, TextItem(item.nombre, item.logo))
-                notifyItemInserted(viewHolder.adapterPosition)}
-
-                (R.id.action_eliminar) -> {items.removeAt(viewHolder.adapterPosition)
-                notifyItemRemoved(viewHolder.adapterPosition)}
-
-            }
-             true
-        }
-
-         */
+         viewHolder.bindTarjeta(item, onClick)
 
     }
-
-
 
     override fun getItemCount(): Int {
          return items.size
